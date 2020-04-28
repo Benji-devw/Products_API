@@ -1,8 +1,7 @@
 const express = require('express')
+const router = express.Router()
 
 const NewHomeCtrl = require('../controllers/newHome-ctrl')
-
-const router = express.Router()
 
 router.post('/newHome', NewHomeCtrl.createNewHome)
 router.put('/newHome/:id', NewHomeCtrl.updateNewHome)

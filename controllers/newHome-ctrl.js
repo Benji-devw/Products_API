@@ -10,7 +10,10 @@ createNewHome = (req, res) => {
         })
     }
 
-    const newHome = new NewHome(body)
+    const newHome = new NewHome({
+        ...body,
+        // imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+    })
 
     if (!newHome) {
         return res.status(400).json({ success: false, error: err })
