@@ -53,9 +53,10 @@ updateNewHome = async (req, res) => {
                 message: 'NewHome not found!',
             })
         }
-        newHome.name = body.name
-        newHome.time = body.time
-        newHome.rating = body.rating
+        newHome.title = body.title
+        newHome.generalInfo = body.generalInfo
+        newHome.category = body.category
+        newHome.reporter = body.reporter
         newHome
             .save()
             .then(() => {
